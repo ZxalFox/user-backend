@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: database # Nome do serviço definido no docker-compose.yml
+  username: postgres
+  password: password
+  pool: 5
+
+development:
+  <<: *default
+  database: saas_app_development
+
+test:
+  <<: *default
+  database: saas_app_test
+
+production:
+  <<: *default
+  database: saas_app_production
