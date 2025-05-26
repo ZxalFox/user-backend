@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   get "/health", to: proc { [200, { "Content-Type" => "application/json" }, ['{"status": "ok", "service": "user-backend"}']] }
 
-
+  resources :entries, only: [:index, :show, :create, :update, :destroy]
+  resources :emotions, only: [:index, :show, :create, :update, :destroy]
 end
