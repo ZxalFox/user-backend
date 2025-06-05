@@ -20,6 +20,11 @@ gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
 
+gem 'bcrypt', '~> 3.1.7'
+gem 'jwt'
+
+gem "redis"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
@@ -43,9 +48,6 @@ group :development, :test do
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
-
-  # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
-  gem "rubocop-rails-omakase", require: false
 end
 
 

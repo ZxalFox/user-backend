@@ -11,6 +11,7 @@ class EmotionsController < ApplicationController
   def create
     emotion = Emotion.new(emotion_params)
     if emotion.save
+      ActionCable.server.broadcast("notifications", { type: "notification", text: "Nova emoção registrada!" })
       render json: emotion, status: :created
     else
       render json: { errors: emotion.errors.full_messages }, status: :unprocessable_entity
@@ -35,6 +36,6 @@ class EmotionsController < ApplicationController
   private
 
   def emotion_params
-    params.require(:emotion).permit(:title, :description, :intensity)
+    params.permit(:title, :description, :intensity)
   end
 end

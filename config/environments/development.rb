@@ -4,6 +4,13 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   config.hosts << "user-backend"
 
+config.action_cable.mount_path = "/cable" # Garante que o WebSocket está montado corretamente
+config.action_cable.url = "ws://localhost:3000/cable"
+config.action_cable.allowed_request_origins = ['http://localhost:5000', 'http://localhost:3000']
+config.action_cable.disable_request_forgery_protection = true
+
+
+
   # Make code changes take effect immediately without server restart.
   config.enable_reloading = true
 
