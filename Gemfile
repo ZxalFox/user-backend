@@ -23,6 +23,10 @@ gem "solid_cable"
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 
+gem 'devise'
+gem 'omniauth-keycloak'
+gem 'omniauth-rails_csrf_protection'
+
 gem "redis"
 
 # Reduces boot times through caching; required in config/boot.rb
