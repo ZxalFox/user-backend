@@ -2,20 +2,9 @@
 
 Devise.setup do |config|
 
-
   Devise.setup do |config|
 
-  config.omniauth :keycloak, 'next-user', 'NA7OWVhZGd7oBDrkhQzVxXRIyetTxDa2',
-                  client_options: {
-                    site: 'https://localhost:5000/',
-                    realm: 'rails-user',
-                    base_url: 'http:8081/',
-                    redirect_uri: "http://localhost:3000/users/auth/keycloakopenid/callback"
-                  },
-                  provider_ignores_state: true,
-                  scope: "openid,profile,email",
-                  strategy_class: OmniAuth::Strategies::KeycloakOpenId
-end
+  end
 
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
